@@ -3,7 +3,7 @@ import loadmodule
 
 
 def open_camera():
-    filter_strategy = globals()['b']
+    filter_strategy = globals()['f']
     capture = cv.VideoCapture(0)
 
     while True:
@@ -14,7 +14,7 @@ def open_camera():
         key = cv.waitKey(20)
         if key != -1:
             filter_name = chr(key)
-            if filter_name == 'd':
+            if filter_name == 'q':
                 break
             elif filter_name in globals():
                 filter_strategy = globals()[filter_name]
