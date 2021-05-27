@@ -11,7 +11,7 @@ def open_camera():
         frame = cv.resize(frame, (850, 480))
 
         filtered_frame = filter_strategy.filter_image(frame)
-        cv.imshow('Video', filtered_frame)
+        cv.imshow('video', filtered_frame)
 
         key = cv.waitKey(20)
         if key != -1:

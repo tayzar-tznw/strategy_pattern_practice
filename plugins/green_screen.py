@@ -17,5 +17,4 @@ def filter_image(frame):
 
     f = frame - res
     f = np.where(f == 0, image, f)
-    cv2.imshow("mask", frame)
     return f
