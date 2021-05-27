@@ -3,13 +3,15 @@ import loadmodule
 
 
 def open_camera():
-    filter_strategy = globals()['f']
+    filter_strategy = globals()['g']
     capture = cv.VideoCapture(0)
 
     while True:
-        isTrue, frame = capture.read()
+        is_true, frame = capture.read()
+        frame = cv.resize(frame, (850, 480))
 
-        cv.imshow('Camera', filter_strategy.filter_image(frame))
+        filtered_frame = filter_strategy.filter_image(frame)
+        cv.imshow('Video', filtered_frame)
 
         key = cv.waitKey(20)
         if key != -1:
